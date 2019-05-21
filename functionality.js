@@ -42,20 +42,25 @@ function flipCard (element) {
             // checks if the card data matches
             console.log("a match.");
             correct++;
-            score += 10
-	        point.innerHTML = 'Points: ' + score; 
+
+                score += 10;
+                point.innerHTML = 'Points: ' + score;
+
+
             // kingston you can also add a general 10 point everytime a pair is correct e.g. score = score + 10;
             console.log(correct);
             // check if card data = time.
             if(card == "time") {
                 // add time
                 timeLeft = timeLeft + 30;
+                
             }
             // check if card data = lifes.
             if(card == "lifes") {
                 // add a life
                 lives++;
                 check.innerHTML = 'lives are  ' + lives;
+                
             }
             // check if card data = score. 
             if (card == "score") {
@@ -70,6 +75,17 @@ function flipCard (element) {
             if(card == "reaper") {
                 // run game over modal.
                 $("#gameOverModal").show();
+                // Discard Points
+                score -= 10;
+                point.innerHTML = 'Points: ' + score;
+            }
+            // checks if game complete
+            if(correct == 5 && card != "reaper"){
+                // decrease points 
+                score -= 10
+                point.innerHTML = 'Points: ' + score; 
+                // run modal.
+                $("#gameCompleteModal").show();
             }
             // checks if game complete
             if(correct == 5 && card != "reaper"){

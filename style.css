@@ -60,7 +60,8 @@ h1,h3 {
 
 /* The Game score added by Kingston 14/05 */
 #score {
-    text-align: left;
+
+    text-align: center;
     padding: 50px;
     font-size: xx-large;
 }
